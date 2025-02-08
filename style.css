@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Loved+by+the+King&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Loved by the King";
+
+    /* Relaxing Red */
+    /* background: #fffbd5;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to top, #b20a2c, #fffbd5);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to top, #b20a2c, #fffbd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    /* Pure Lust */
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #dd1818, #333333);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/* Letter Styles */
+.letter-container {
+    height: 200px;
+    width: 300px;
+    background-color: #ff257e;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+#letter {
+    position: absolute;
+    top: 0;
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border-radius: 15px;
+    z-index: 2;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#letter p {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 30px;
+    color: #333;
+    font-family: "Dancing Script";
+}
+
+/* Envelope Styles */
+.envelope {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-top: 100px solid transparent;
+    border-right: 150px solid #ffc5e6;
+    border-bottom: 100px solid #ffc5e6;
+    border-left: 150px solid #fd9ed4;
+    z-index: 3;
+}
+
+.lid {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-right: 150px solid transparent;
+    border-bottom: 100px solid transparent;
+    border-left: 150px solid transparent;
+    transform-origin: top;
+    transition: transform 0.25s linear;
+}
+
+.lid.one {
+    border-top: 100px solid #ff76c3;
+    transform: rotateX(0deg);
+    z-index: 3;
+    transition-delay: 0.75s;
+}
+
+.lid.two {
+    border-top: 100px solid #ff76c3;
+    transform: rotateX(90deg);
+    z-index: 1;
+    transition-delay: 0.5s;
+}
+
+/* Animate Styles */
+.lid.one.animate {
+    transform: rotateX(90deg);
+    transition-delay: 0s;
+}
+
+.lid.two.animate {
+    transform: rotateX(180deg);
+    transition-delay: 0.25s;
+}
+
+#letter.animate {
+    transform: translateY(-50px);
+    transition-delay: 0.5s;
+}
+
+/* Heart Styles */
+.heart-container {
+    position: absolute;
+}
+
+#heart {
+    position: relative;
+    width: 100px;
+    height: 90px;
+    margin-top: 10px;
+    box-shadow: #333;
+    cursor: pointer;
+}
+
+#heart::before, #heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 80px;
+    border-radius: 50px 50px 0 0;
+    background: #ff2644;
+}
+
+#heart::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+#heart::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* Modal Styles */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 26px;
+    text-align: center;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Font Styles */
+.dancing-script {
+    font-family: "Dancing Script";
+}
+
+.left {
+    display: block;
+    text-align: left;
+    font-size: 28px;
+}
+
+.right {
+    display: block;
+    text-align: right;
+    font-size: 28px;
+}
